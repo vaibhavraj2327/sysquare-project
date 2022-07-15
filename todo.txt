@@ -1,0 +1,16 @@
+the project details 
+    make an html page which accept user input: 
+        first name (input tab with only characters) done
+        last name (input tab with only characters) done
+        date of birth (have calander to input the data and only digits) -done
+        hobbies -> multiple (should be displayed after being entered in one place and can add more hobbies later)
+        gender -> radio button (male, female) -done (not able to store the details of the hobbies data as it is multiple.)
+
+    the details should be saved in memory using javascript. only the hobbies input is not saved as i am not able to get the data from the button and not able to store it in localstorage.
+        ->
+    the admin should be able to update the user details.    
+        -> have to create a separate page for the admin and breate a button right after the submit button for the admin to login
+
+
+
+    

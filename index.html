@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+  
+  <link rel="stylesheet" href="/bootstrap-5.0.2-dist/css/bootstrap.css">
+  <link rel="stylesheet" href="/bootstrap-5.0.2-dist/css/bootstrap.min.css">
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+    .gradient-custom {
+/* fallback for old browsers */
+background: #f093fb;
+
+/* Chrome 10-25, Safari 5.1-6 */
+background: -webkit-linear-gradient(to bottom right, rgba(240, 147, 251, 1), rgba(245, 87, 108, 1));
+
+/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+background: linear-gradient(to bottom right, rgb(150, 128, 248), rgb(235, 12, 42))
+}
+
+.card-registration .select-input.form-control[readonly]:not([disabled]) {
+font-size: 1rem;
+line-height: 2.15;
+padding-left: .75em;
+padding-right: .75em;
+}
+.card-registration .select-arrow {
+top: 13px;
+}
+form
+{
+    color: rgb(255, 97, 97);
+    font-size: 30px;
+    font-family: 'Pacifico', cursive;
+}
+h2
+{
+  color: grey;
+  font-family: 'Pacifico', cursive;
+}
+.updated
+{
+  justify-items: end;  
+  margin-top: 5%;
+    color: black;
+    font-size: 30px;
+    font-family: 'Pacifico', cursive;
+}
+.deleted
+{
+  justify-items: end;  
+  margin-top: 5%;
+  float: right;
+    color: black;
+    font-size: 30px;
+    font-family: 'Pacifico', cursive;
+}
+</style>
+</head>
+<body >
+        <section class="vh-150 gradient-custom">
+            <div class="container py-5 h-100">
+              <div class="row justify-content-center align-items-center h-100">
+                <div class="col-12 col-lg-9 col-xl-7">
+                  <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+                    <div class="card-body p-4 p-md-5">
+                      <h2 class="mb-4 pb-2 pb-md-0 mb-md-5">Registration Form</h2>
+                     <form onsubmit="submited(event)">
+                      <div class="form-group">
+                        <label class="form-control-label">First Name</label>
+                        <input class="form-control" type="text" name="firstName" id="first_name">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-control-label">Last Name</label>
+                        <input class="form-control" type="text" name="lastName" id="last_name">
+                    </div>
+                    <div>
+                        <label class="form-control-label">Date of Birth</label>
+                        <input class="form-control" type="date" name="date" id="date">
+                    </div>
+                    <div class="form-group ">
+                      <label >Gender</label><br>
+                      <input type="radio" name="gender" id="gender" required/>Male
+                      <input type="radio" name="gender" >Female
+                    </div>
+                    <div class="form-group m-2">
+                    <label>Hobbies</label>
+                    <select id="hobbies" class="form-select" multiple>
+                      <option selected>Select</option>
+                      <option value="Reading">Reading</option>
+                      <option value="Reading">Volleyball</option>
+                      <option value="Bike riding">Bike riding</option>
+                    </select>
+                    </div><br>
+                    <input type="submit" value="Submit">
+                      </form>
+                      <div>
+                        <input type="button" value="update" onclick="updated()" class="updated">
+                        <input type="button" value="delete" onclick="deleted()" class="deleted">
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+     
+       <script type="text/javascript">
+            function submited(event) {
+                event.preventDefault();
+
+                var first_name = document.getElementById("first_name").value;
+                var last_name = document.getElementById("last_name").value;
+                var date = document.getElementById("date").value;
+                var gender = document.getElementById("gender");
+      
+                /*i just need to store them in localstorage but dont know how to select them and store them*/
+                var hobbie = document.getElementById("hobbies").value;
+
+                gender.checked ? gender = "Male" : gender = "Female";
+
+                console.log(first_name,last_name,date,gender,hobbie);
+
+                localStorage.setItem('firstName', first_name);
+                localStorage.setItem('lastName', last_name);
+                localStorage.setItem('Date', date);
+                localStorage.setItem('Gender', gender);
+                localStorage.setItem('Hobbie', hobbie);
+                
+            }
+            function updated(){
+              var inputed = prompt();
+              if(inputed == 'first name'){
+                var newfirst = prompt();
+                localStorage.setItem('firstName',newfirst);
+              } else if( inputed == 'last name'){
+                var newlast = prompt();
+                localStorage.setItem('lastName', newlast);
+              }  else if( inputed == 'date'){
+                var newdate = prompt();
+                localStorage.setItem('Date', newdate);
+              }  else if( inputed == 'gender'){
+                var newgender = prompt('please enter Male or Female');
+                localStorage.setItem('Gender', newgender);
+              }  else if( inputed == 'hobbie'){
+                var newhobbie = prompt();
+                localStorage.setItem('Hobbie', newhobbie);
+              } else 
+                {alert('no input was given');
+            }}
+            function deleted(){
+              var deletedq = prompt('please enter the input you want to delete');
+              if (deletedq == 'first name'){
+                localStorage.removeItem('firstName');
+              } else if (deletedq == 'last name'){
+                localStorage.removeItem('lastName');
+              }else if (deletedq == 'date'){
+                localStorage.removeItem('Date');
+              }else if (deletedq == 'gender'){
+                localStorage.removeItem('Gender');
+              }else if (deletedq == 'hobbie'){
+                localStorage.removeItem('Hobbie');
+              }
+              else {alert('no input was given');}
+            }
+       </script>
+<script src="/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
+
+
+// to update the first name
+//var newfirst = prompt();
+//localStorage.setItem('firstName', newfirst);
