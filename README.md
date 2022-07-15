@@ -13,3 +13,10 @@ to update the data the user has to given the key and the value of the key he/she
 to delete the stored data the user has to just give the key of the data stored and the key is asked with the help of prompt and the data is passed to the local variable to pass on to the next if else condition.
 
 
+to make the page more interactive and beautiful use vscode with live server (extension) 
+step-1 open the file in vscode (the alone html page will not work, have to use the whole file)
+step-2 in the bottom right corner the live server extension will appear. click on it 
+step-3 this will show the port that is hosting the page.
+step-4 go on the crome browser and type 127.0.0.1:port in the top address bar.
+
+the page will open and the site will be visible with the css used in it.
