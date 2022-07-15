@@ -1,0 +1,12 @@
+the project details 
+    make an html page which accept user input: 
+        first name (input tab with only characters) done
+        last name (input tab with only characters) done
+        date of birth (have calander to input the data and only digits) -done
+        hobbies -> multiple (added but only one value is stored)
+        gender -> radio button (male, female) -done 
+
+    the details should be saved in memory using javascript. but for hobbies only single value is stored.
+        
+    the admin should be able to update the user details.    
+        -> this functionality is added by using button's for update and delete
